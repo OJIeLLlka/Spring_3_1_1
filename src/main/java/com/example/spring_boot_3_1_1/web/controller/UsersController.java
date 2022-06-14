@@ -21,7 +21,7 @@ public class UsersController {
         this.userService = userService;
     }
 
-    @GetMapping()
+    @GetMapping
     public String index(Model model) {
 
         model.addAttribute(userService.getAllUsers());
@@ -40,7 +40,7 @@ public class UsersController {
         return "new";
     }
 
-    @PostMapping()
+    @PostMapping
     public String create(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
